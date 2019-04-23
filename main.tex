@@ -1,0 +1,205 @@
+%----------------------------------------------------------------------------------------
+% Jacobs University Thesis
+% Adapted from https://www.overleaf.com/learn/latex/
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+% Preamble: load packages
+%----------------------------------------------------------------------------------------
+\documentclass[12pt,twoside]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{scrextend}
+\usepackage[T1]{fontenc}
+\usepackage{siunitx}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{units}
+\usepackage[style=authoryear,backend=bibtex]{biblatex}
+\addbibresource{references.bib}
+\usepackage{booktabs}
+\usepackage{textcomp}
+\usepackage{makecell}
+\usepackage[figuresright]{rotating}
+\usepackage{adjustbox}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{subcaption}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+    colorlinks=false,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+    pdftitle={Sharelatex Example},
+    bookmarks=true,
+    citecolor=blue
+}
+\usepackage{float}
+
+\input{resources/link_formatting.tex}
+%----------------------------------------------------------------------------------------
+% preamble: caption config.
+%----------------------------------------------------------------------------------------
+
+\usepackage[labelfont=bf]{caption}
+\captionsetup[figure]{font={stretch=1.5,scriptsize}}
+\captionsetup[table]{font={stretch=1.5,scriptsize}}
+\let\counterwithout\relax
+\let\counterwithin\relax
+\usepackage{chngcntr}
+\counterwithin{figure}{section}
+\counterwithin{equation}{section}
+\counterwithin{table}{section}
+\renewcommand\thefigure{\thesection-\arabic{figure}}
+\renewcommand\thetable{\thesection-\arabic{table}}
+\renewcommand\theequation{\thesection-\arabic{equation}}
+
+%----------------------------------------------------------------------------------------
+% Preamble: layout config.
+%----------------------------------------------------------------------------------------
+
+\usepackage[a4paper,  includeheadfoot,margin=2.54cm ]{geometry}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\graphicspath{ {figures/} }
+\fancyhead{}
+\fancyhead[L]{\chaptername\ \thechapter.\ \leftmark}
+\fancyfoot{}
+\fancyfoot[LE,RO]{\thepage}
+\renewcommand{\chaptermark}[1]{ \markboth{#1}{} }
+\renewcommand{\sectionmark}[1]{ \markright{#1}{} }
+\setlength{\headheight}{15pt}
+\setlength{\parindent}{0em}
+
+%----------------------------------------------------------------------------------------
+%	Title page
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\pagenumbering{gobble}
+\begin{titlepage}
+
+%%%%%%%
+\begin{picture}(10,10)
+\put(-20,-20){\hbox{
+   \includegraphics[width=3.2cm]{MPI-english_85cm_E.eps}
+   }}
+\end{picture}
+
+\begin{picture}(10,10)
+\put(330,10){\hbox{
+\hspace{\fill}
+  \includegraphics[width=5cm]{jacobs-university-bremen.eps}
+   }}
+\end{picture}
+%%%%%%%
+
+\begin{center}
+\vspace{0.8cm}
+\Large\textbf{Title goes here}\\
+\vspace{0.8cm}
+by\\
+\vspace{0.8cm}
+\large\textbf{Full name}\\
+\vspace{01cm}
+\normalsize{A Thesis submitted in partial fulfillment of requirements for the degree of}\\ 
+\large\textbf{Doctor of Philosophy in ...}\\
+\vspace{1cm}
+\textbf{Thesis committee:}\\
+\vspace{0.5cm}
+\normalsize\textbf{Full name1 (Chair)}\\
+\normalsize{Max Planck Institute for Marine Microbiology\\
+Jacobs University Bremen}\\
+\vspace{0.5cm}
+\normalsize\textbf{Full name2}\\
+\normalsize{Jacobs University Bremen}\\
+\vspace{0.5cm}
+\normalsize\textbf{Full name3}\\
+\normalsize{Jacobs University Bremen}
+
+\vspace*{\fill}
+
+\begin{flushleft}
+\normalsize{Bremen, date goes here}
+\end{flushleft} 
+
+\end{center}
+\end{titlepage}
+
+\cleardoublepage
+
+%----------------------------------------------------------------------------------------
+%	Declaration
+%---------------------------------------------------------------------------------------- 
+  
+\chapter*{Statutory Declaration}
+\input{Declaration}
+\newpage
+
+%----------------------------------------------------------------------------------------
+%	Abstract
+%----------------------------------------------------------------------------------------
+
+\pagestyle{plain}
+\chapter*{Abstract}
+\input{Abstract}
+  
+%----------------------------------------------------------------------------------------
+%     Abbreviations
+%----------------------------------------------------------------------------------------
+
+\clearpage
+\newpage
+\chapter*{Abbreviations}
+\input{Abbreviations}
+ 
+%----------------------------------------------------------------------------------------
+%	TOC
+%---------------------------------------------------------------------------------------- 
+
+\newpage
+\clearpage
+\pagenumbering{arabic}
+\tableofcontents 
+\clearpage
+\pagestyle{fancy}
+ 
+%----------------------------------------------------------------------------------------
+%	Content
+%---------------------------------------------------------------------------------------- 
+ 
+\chapter{Introduction}
+\input{chapters/introduction}
+\chapter{Results and Discussion}
+\input{chapters/chapter_02}
+
+\chapter{Final remarks and conclusion}
+\input{chapters/chapter_03}
+
+\chapter{Outlook}
+\input{chapters/chapter_04}
+
+\chapter{Additional scientific publications}
+\input{chapters/additional_publications}
+
+\chapter{Appendix: supplementary materials}
+\input{chapters/supplementary_data}
+
+%----------------------------------------------------------------------------------------
+%	Acknowledgements
+%---------------------------------------------------------------------------------------- 
+ 
+\chapter*{Acknowledgements}
+\input{Acknowledgments}
+
+\pagestyle{plain}
+\printbibliography
+
+\end{document}
+
