@@ -4,7 +4,7 @@ The Template consists of the main.tex file, and the chapters, and subfiles loade
 
 To compile the main.tex simply run `make` or `make clean` to clean up the building directory (e.g., when recompiling).
 
-This template was adapted from Overleaf[https://www.overleaf.com/learn/latex].
+This template was adapted from (Overleaf)[https://www.overleaf.com/learn/latex].
 
 
 
